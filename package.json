@@ -1,8 +1,31 @@
 {
-    "name": "nodejs",
-    "version": "1.0.0",
-    "keywords": ["util", "functional", "server", "client", "browser"],
-    "author": "pathan",
-    "contributors": [],
-    "dependencies": {}
+  "name": "nodejs",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "pathan",
+  "contributors": [],
+  "dependencies": {
+    "colors": "^1.4.0",
+    "simple-node-logger": "^21.8.12"
+  },
+  "description": "aamir learning node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aamir-pathan/node.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aamir-pathan/node/issues"
+  },
+  "homepage": "https://github.com/aamir-pathan/node#readme"
 }

@@ -1,3 +1,5 @@
+//1 to 10 topics
+
 const apps = require('./app.js')
 const arr = [2,3,4,4,7,8,90];
 //console.log(apps.x);
@@ -17,7 +19,7 @@ return items > 4;
 
 //create a file
 //const fs = require('fs');
-//fs.writeFileSync('hello1.txt','hy rhis my first file');
+//fs.writeFileSync('index1.js','hy rhis my first file');
 //const fs = require('fs').writeFileSync;
 //fs('hellofun.js','from aamir pathan');
 
@@ -30,9 +32,18 @@ const http = require('http');
 //}
 //http.createServer(controldata).listen(4500);
 
-http.createServer((req,resp)=>{
-   resp.write("<h1>Hello Mohd Aamir pathan learning Node js</h1>"); 
-}).listen(4500);
+//http.createServer((req,resp)=>{
+//   resp.write("<h1>Hello Mohd Aamir pathan learning Node js</h1>"); 
+//}).listen(4500);
+//
+//
+//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
 
+
+
+//use color package
+var colors = require('colors');
+
+console.log("aamir pathan is red node js".red);
 
 
