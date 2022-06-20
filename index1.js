@@ -103,4 +103,31 @@ for(i = 0;i< 5; i++){
 //});
 //  console.warn(a+b);
 
+//(18)Now working with exprrss.js
+const express = require('express');
+const app = express();
+//app.get('/',(req,resp)=>{
+//   resp.send("<h1>hy this our home page</h1><a href='/embed'>please click go to render html json page</a>"); 
+//});
+//app.get('/about',(req,resp)=>{
+//   resp.send("<h2>hy this our about page</h2>"); 
+//});
 
+//request with params vv imp
+//app.get('/interview',(req,resp)=>{
+//    //console.log("data sent by reqest or brower==>",req.query);
+//    //console.log("data sent by reqest or brower==>",req.query.name);
+//   resp.send("<h2>hy this our arren interview page</h2>"+req.query.name); 
+//});
+
+//create and git input form params
+//app.get('/embed',(req,resp)=>{
+//    resp.send(`
+//        <input type="text" placeholder="user name here" value="${req.query.name}"/>
+//      <a href='/'>please click go to Home page</a>
+//    `);
+//});
+//app.listen(4602);
+
+//const fs = require('fs');
+//fs.writeFileSync('index2.js','tr');
