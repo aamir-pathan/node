@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ejs dynamic</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <%- include('common/header'); %>
+        <div>ejs dynamic page gd</div>
+        <h1><%= user.name %></h1>
+        <h2><%= user.branch %></h2>
+        <h3><%= user.city %></h3>
+        <ul>
+            <% user.skills.forEach((item)=>{ %>
+              <li><%= item %></li>   
+           <% }) %>
+        </ul>
+    </body>
+</html>

@@ -12,7 +12,9 @@
   "contributors": [],
   "dependencies": {
     "colors": "^1.4.0",
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "nodemon": "^2.0.16",
     "simple-node-logger": "^21.8.12"
   },
   "description": "aamir learning node js",
