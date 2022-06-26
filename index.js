@@ -1,6 +1,7 @@
 //render html files in node js
 //const express = require('express');
 //const app = express();
+const { connect } = require('http2');
 const path = require('path');
 const filespath = path.join(__dirname,'public');
 ////console.log(filespath);
@@ -41,23 +42,79 @@ const filespath = path.join(__dirname,'public');
 
 
 //create middle ware
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
+// const reqfilter = (req,resp,next)=>{
+//     //console.log('reqfilter');
+//     if(!req.query.age){
+//         resp.send('<h2>please provide age</h2>')
+//     }else if(req.query.age < 18){
+//         resp.send('<h2>due to not got 18 age can"t access web</h2>')
+//     }else
+//     next();
+// }
+// //for all application
+// //app.use(reqfilter)
+//single route middleware
+// app.get('/',reqfilter,(req,resp)=>{
+//     resp.send('<h1>welcome this home page</h1>')
+// });
+// app.get('/owner',(req,resp)=>{
+//     resp.send('<h1>Hello welcome this owner page</h1>')
+// });
+// app.get('/user',(req,resp)=>{
+//     resp.send('<h1>Hello welcome this user page</h1>')
+// });
+// app.listen(4604);
 
-const reqfilter = (req,resp,next)=>{
-    //console.log('reqfilter');
-    if(!req.query.age){
-        resp.send('<h2>please provide age</h2>')
-    }else if(req.query.age < 18){
-        resp.send('<h2>due to not got 18 age can"t access web</h2>')
-    }else
-    next();
+//groups routes middleware
+// const express = require('express');
+// const app = express();
+// const reqfilter = require('./middleware');
+// const route = express.Router();
+// route.use(reqfilter);
+// //for single route midleware
+// app.get('/',(req,resp)=>{
+//    resp.send('this home page signle routes')
+// });
+// //gourps middle ware
+// route.get('/contact',(req,resp)=>{
+//     resp.send('this contact page page')
+//  });
+//  route.get('/end',(req,resp)=>{
+//     resp.send('this end page oh')
+//  });
+// app.use('/',route);
+// app.listen(4604);
+
+
+// connect with mongoid icloud
+// const mongoose = require('mongoose')
+// const dburl = "mongodb+srv://aamirdb:aamirdb@cluster0.grz3e.mongodb.net/?retryWrites=true&w=majority";
+// const conectionParams = {
+//    userNewUrlParser:true,
+//    userUnifiedTopology:true,
+// }
+
+// mongoose.connect(dburl, conectionParams).then(()=>{
+//    console.log('databse contacted');
+// });
+
+// connect with mongo db
+const {MongoClient} = require('mongodb');
+// const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://localhost:27017';
+const client = new MongoClient(url);
+const database = 'nodedb'; 
+
+async function getData(){
+   let result = await client.connect();
+   console.log(client.connect());
+   //let db = result.db('nodedb');
+   let db = result.db(database);
+   let collection = db.collection('node');
+   //console.log(collection.find({}).toArray());
+   let response = await collection.find({}).toArray();
+   console.log(response);
 }
-app.use(reqfilter)
-app.get('/',(req,resp)=>{
-    resp.send('<h1>welcome this home page</h1>')
-});
-app.get('/user',(req,resp)=>{
-    resp.send('<h1>Hello welcome this user page</h1>')
-});
-app.listen(4604);
+getData();
