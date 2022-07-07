@@ -1,49 +1,97 @@
-//1 to 10 topics
+// const express = require('express');
+// const app = express();
+// require('./config');
+// const nodeCollection = require('./nodedb');
+// app.use(express.json());
+// app.post('/create',async(req,resp)=>{
+//     //console.warn('done')
+//     let data = new nodeCollection(req.body);
+//     let result  = await data.save();
+//     console.warn(result);
+// })
 
-const apps = require('./app.js')
-const arr = [2,3,4,4,7,8,90];
-//console.log(apps.x);
-//console.warn(apps.z());
-//console.warn(apps);
+// app.get('/list',async(req,resp)=>{
+//      let data =  await nodeCollection.find();
+//      console.log(data);
+// })
+// app.delete('/delete/:_id',async(req,resp)=>{
+//     let data  = await nodeCollection.deleteOne(
+//         req.params.id
+//     )
+//     console.log(data);
+// })
+// app.put('/update/:_id',async(req,resp)=>{
+//     let data = await nodeCollection.updateOne(
+//         req.params,
+//         {$set:req.params}
+//     )
+//     console.log(data);
 
-//find like loop all array values
-//arr.filter((items)=>{
-//    console.warn(items);
-//});
-
-let result = arr.filter((items)=>{
-//    return items === 4;
-return items > 4;
-});
-//console.warn(result);
-
-//create a file
-//const fs = require('fs');
-//fs.writeFileSync('index1.js','hy rhis my first file');
-//const fs = require('fs').writeFileSync;
-//fs('hellofun.js','from aamir pathan');
-
-
-//create server
-const http = require('http');
-//function controldata(req,resp){
-//   resp.write("<h1>tr Hello Mohd Aamir pathan learning Node js</h1>"); 
-//   resp.end();
-//}
-//http.createServer(controldata).listen(4500);
-
-//http.createServer((req,resp)=>{
-//   resp.write("<h1>Hello Mohd Aamir pathan learning Node js</h1>"); 
-//}).listen(4500);
-//
-//
-//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
+// })
+// app.listen(5000);
 
 
+//search filed in node js
+// const express = require('express');
+// const app = express();
+// require('./config')
+// const node = require('./nodedb');
+// app.use(express.json());
+// app.get('/search/:key',async(req,resp)=>{
+//     let data = await node.find({
+//         "$or":[
+//             {"name":{$regex:req.params.key}}
+//         ]
+// })
+//     resp.send(data);
+//     console.log(data);
+// })
+// app.listen(4000)
 
-//use color package
-var colors = require('colors');
+//upload a file with multer package
+// const express = require('express');
+// const app = express();
+// const multers = require('multer');
+// const upload = multers({
+//    storage:multers.diskStorage({
+//       destination:function(req,file,cb){
+//          cb(null,'upload');
+//       },
+//       filename:function(req,file,cb){
+//          cb(null,file.fieldname + "-"+ Date.now() +".jpg")
+//       }
+//    })
+// }).single('user_file');
 
-console.log("aamir pathan is red node js".red);
+
+// app.post('/upload',upload,(res,resp)=>{
+//    console.log('Successfull upload file');
+// })
+// app.listen(3000);
 
 
+//how to get nfo of  our system like window and linux
+// const os =  require("os");
+// console.warn(os.arch());
+// console.warn(os.freemem()/(1024*1024));
+// console.warn(os.totalmem()/(1024*1024));
+// console.log(os.homedir())
+// console.log(os.userInfo())
+
+//how to user event and emmit
+// const express =require('express');
+// const app = express();
+// const EventEmitter = require('events')
+// const event = new EventEmitter();
+// let = count = 0;
+// event.on("calledAPI", ()=>{
+//    count++;
+//    console.log("called evnt at least once",count)
+// })
+
+// app.get('/',(req,resp)=>{
+//    resp.send("called home page");
+//    event.emit("calledAPI");
+
+// })
+// app.listen(2000);
