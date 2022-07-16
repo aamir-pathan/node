@@ -9,7 +9,7 @@
 //     let result  = await data.save();
 //     console.warn(result);
 // })
-
+//aa
 // app.get('/list',async(req,resp)=>{
 //      let data =  await nodeCollection.find();
 //      console.log(data);
